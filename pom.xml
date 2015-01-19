@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>nz.ac.auckland</groupId>
+		<artifactId>uoa-groovy-parent</artifactId>
+		<version>3.15</version>
+	</parent>
+
+	<groupId>nz.ac.auckland.lmzwidget</groupId>
+	<artifactId>lmzwidget</artifactId>
+    <packaging>jar</packaging>
+	<name>LMZ Widget</name>
+	<version>1.1-SNAPSHOT</version>
+
+	<description>
+		LMZ Widget proof of concept frontend and bus module
+	</description>
+
+	<dependencies>
+
+        <dependency>
+            <groupId>nz.ac.auckland.composite</groupId>
+            <artifactId>composite-groovy</artifactId>
+            <version>[6,7)</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.bluetrainsoftware.bathe.initializers</groupId>
+            <artifactId>system-property-loader</artifactId>
+            <version>[2.2,3)</version>
+        </dependency>
+
+        <dependency>
+            <groupId>nz.ac.auckland.groupapps.lmz</groupId>
+            <artifactId>lmz-jawr</artifactId>
+            <version>[1.2,2)</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>nz.ac.auckland.groupapps.common</groupId>
+            <artifactId>runnable-war</artifactId>
+            <version>[1.11,2)</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>nz.ac.auckland.composite</groupId>
+            <artifactId>composite-spring-web</artifactId>
+            <version>[6.1,)</version>
+        </dependency>
+
+        <dependency>
+            <groupId>nz.ac.auckland.composite</groupId>
+            <artifactId>composite-jackson</artifactId>
+            <version>[2.4, 3)</version>
+        </dependency>
+
+        <dependency>
+            <groupId>nz.ac.auckland.common</groupId>
+            <artifactId>common-configuration</artifactId>
+            <version>[3.5,)</version>
+        </dependency>
+
+        <!-- syllabus -->
+        <dependency>
+            <groupId>nz.ac.auckland.syllabus</groupId>
+            <artifactId>syllabus-http</artifactId>
+            <version>[3.2,)</version>
+        </dependency>
+
+        <!-- stencil -->
+        <dependency>
+            <groupId>nz.ac.auckland.stencil</groupId>
+            <artifactId>stencil-util</artifactId>
+            <version>[2.3,3)</version>
+        </dependency>
+
+        <dependency>
+            <groupId>nz.ac.auckland.stencil</groupId>
+            <artifactId>stencil-core</artifactId>
+            <version>[2.6,3)</version>
+        </dependency>
+
+        <!-- this is to allow us to use tests -->
+        <dependency>
+            <groupId>nz.ac.auckland.composite</groupId>
+            <artifactId>composite-unittest</artifactId>
+            <version>[2.4,3)</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- lmz widget specific includes -->
+        <dependency>
+            <groupId>nz.ac.auckland.lmzwidget</groupId>
+            <artifactId>configuration-model</artifactId>
+            <version>[1,2)</version>
+        </dependency>
+
+        <dependency>
+            <groupId>nz.ac.auckland.lmzwidget</groupId>
+            <artifactId>generator</artifactId>
+            <version>[1,2)</version>
+        </dependency>
+
+    </dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>com.bluetrainsoftware.bathe.web</groupId>
+				<artifactId>bathe-jetty-jspc-maven-plugin</artifactId>
+			</plugin>
+			<!--
+				<plugin>
+					<groupId>org.jasig.maven</groupId>
+					<artifactId>sass-maven-plugin</artifactId>
+				</plugin>
+			-->
+			<plugin>
+				<groupId>com.bluetrainsoftware.maven</groupId>
+				<artifactId>bathe-plugin</artifactId>
+				<version>2.1</version>
+				<extensions>true</extensions>
+				<configuration>
+					<jumpClass>nz.ac.auckland.war.WebAppRunner</jumpClass>
+					<booterArguments>-Dlogback.configurationFile=logback.xml -Psrc/main/webapp/META-INF/baseconfig/lmzwidgetpoc.properties -P${user.home}/.webdev/lmzwidgetpoc-war.properties</booterArguments>
+				</configuration>
+			</plugin>	
+		</plugins>
+	</build>
+</project>
