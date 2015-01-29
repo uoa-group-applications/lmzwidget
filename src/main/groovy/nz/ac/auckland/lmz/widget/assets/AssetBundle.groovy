@@ -24,6 +24,4 @@ class AssetBundle {
     String bootstrap;
 
 
-
-
 }

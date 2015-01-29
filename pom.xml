@@ -2,9 +2,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>nz.ac.auckland</groupId>
-		<artifactId>uoa-groovy-parent</artifactId>
-		<version>3.15</version>
+		<groupId>nz.ac.auckland.groupapps.parent</groupId>
+		<artifactId>parent-groovy-groupapps-central</artifactId>
+		<version>1.5</version>
 	</parent>
 
 	<groupId>nz.ac.auckland.lmzwidget</groupId>
@@ -16,6 +16,12 @@
 	<description>
 		LMZ Widget proof of concept frontend and bus module
 	</description>
+
+	<scm>
+		<url>https://github.com/uoa-group-applications/lmzwidget</url>
+		<connection>scm:git:https://github.com/uoa-group-applications/lmzwidget.git</connection>
+		<developerConnection>scm:git:git@github.com:uoa-group-applications/lmzwidget.git</developerConnection>
+	</scm>
 
 	<dependencies>
 
@@ -89,6 +95,12 @@
             <artifactId>composite-unittest</artifactId>
             <version>[2.4,3)</version>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>nz.ac.auckland.lmz</groupId>
+            <artifactId>lmz-version</artifactId>
+            <version>[1.2,2)</version>
         </dependency>
 
         <!-- lmz widget specific includes -->
