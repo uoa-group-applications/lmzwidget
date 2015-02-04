@@ -33,30 +33,26 @@
         </dependency>
 
         <dependency>
-            <groupId>com.bluetrainsoftware.bathe.initializers</groupId>
-            <artifactId>system-property-loader</artifactId>
-            <version>[2.2,3)</version>
-        </dependency>
-
-        <dependency>
             <groupId>nz.ac.auckland.groupapps.lmz</groupId>
             <artifactId>lmz-jawr</artifactId>
             <version>[1.2,2)</version>
         </dependency>
 
 
+
+<!--
         <dependency>
-            <groupId>nz.ac.auckland.groupapps.common</groupId>
-            <artifactId>runnable-war</artifactId>
-            <version>[1.11,2)</version>
+            <groupId>com.bluetrainsoftware.bathe.initializers</groupId>
+            <artifactId>system-property-loader</artifactId>
+            <version>[2.2,3)</version>
+            <scope>test</scope>
         </dependency>
-
-
         <dependency>
             <groupId>nz.ac.auckland.composite</groupId>
             <artifactId>composite-spring-web</artifactId>
-            <version>[6.1,)</version>
+            <version>[5,6)</version>
         </dependency>
+-->
 
         <dependency>
             <groupId>nz.ac.auckland.composite</groupId>
@@ -70,14 +66,26 @@
             <version>[3.5,)</version>
         </dependency>
 
-        <!-- syllabus -->
+        <dependency>
+            <groupId>nz.ac.auckland.composite</groupId>
+            <artifactId>composite-s3-bus</artifactId>
+            <version>[3.1,4)</version>
+        </dependency>
+
+        <dependency>
+            <groupId>nz.ac.auckland.composite</groupId>
+            <artifactId>composite-s3-webjar</artifactId>
+            <version>[5.2,6)</version>
+        </dependency>
+
+
+        <!-- syllabus 
         <dependency>
             <groupId>nz.ac.auckland.syllabus</groupId>
             <artifactId>syllabus-http</artifactId>
-            <version>[3.2,)</version>
+            <version>[2,3)</version>
         </dependency>
 
-        <!-- stencil -->
         <dependency>
             <groupId>nz.ac.auckland.stencil</groupId>
             <artifactId>stencil-util</artifactId>
@@ -89,6 +97,8 @@
             <artifactId>stencil-core</artifactId>
             <version>[2.6,3)</version>
         </dependency>
+
+-->
 
         <!-- this is to allow us to use tests -->
         <dependency>
