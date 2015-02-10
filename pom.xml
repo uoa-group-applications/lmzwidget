@@ -11,7 +11,7 @@
 	<artifactId>lmzwidget</artifactId>
     <packaging>jar</packaging>
 	<name>LMZ Widget</name>
-	<version>1.5-SNAPSHOT</version>
+	<version>1.5</version>
 
 	<description>
 		LMZ Widget proof of concept frontend and bus module
@@ -21,7 +21,7 @@
 		<url>https://github.com/uoa-group-applications/lmzwidget</url>
 		<connection>scm:git:https://github.com/uoa-group-applications/lmzwidget.git</connection>
 		<developerConnection>scm:git:git@github.com:uoa-group-applications/lmzwidget.git</developerConnection>
-	  <tag>HEAD</tag>
+	  <tag>lmzwidget-1.5</tag>
   </scm>
 
 	<dependencies>
