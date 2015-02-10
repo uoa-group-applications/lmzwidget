@@ -1,6 +1,7 @@
 package nz.ac.auckland.lmz.widget.stencil
 
 import com.fasterxml.jackson.databind.ObjectMapper
+import nz.ac.auckland.common.config.ConfigKey
 import nz.ac.auckland.lmz.common.LmzAppVersion
 import nz.ac.auckland.lmz.widget.WidgetStencil
 import nz.ac.auckland.lmz.widget.service.WidgetService
@@ -34,6 +35,9 @@ class ViewStencil implements Stencil {
      */
     @Inject LmzAppVersion appVersion;
 
+    @ConfigKey("lmzwidget.strictversion")
+    private Boolean strictVersion = false;
+
     /**
      * This method is called when the stencil is invoked
      *
@@ -55,7 +59,7 @@ class ViewStencil implements Stencil {
         Widget stencilWidget = widgetService?.getWidgetAnnotationFor(stencil);
 
         String versionParam = getVersionParameter(request)
-        if (!validVersion(versionParam)) {
+        if (strictVersion && !validVersion(versionParam)) {
             LOG.info(
                     "The version specified is not supported, expected version: {}, got: {}",
                     appVersion.version,
