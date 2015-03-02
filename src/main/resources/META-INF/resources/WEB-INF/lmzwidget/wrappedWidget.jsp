@@ -3,8 +3,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
-<p>Generated on: <%= new SimpleDateFormat("dd-MM-yyyy|HH:mm:ss").format(new Date())  %></p>
-
+<%--
+    <p>Generated on: <%= new SimpleDateFormat("dd-MM-yyyy|HH:mm:ss").format(new Date())  %></p>
+--%>
 <c:set var="wrapAttributes" value="" />
 
 <c:forEach items="${widgetDataElements}" var="widgetEntry">
