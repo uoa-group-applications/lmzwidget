@@ -121,7 +121,7 @@ class ViewStencil implements Stencil {
      * @return the configuration parameter
      */
     protected String getConfigurationParameter(HttpServletRequest request) {
-        return request.getParameter("configuration")
+        return request.getParameter("configuration")?.replace(" ", "+");
     }
 
     /**
